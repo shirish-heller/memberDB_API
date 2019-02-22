@@ -3,8 +3,8 @@ const path = require('path');
 const config = {
     entry: './app.js',
     output: {
-        path: path.resolve(__dirname + 'build'),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
     },
     module: {
         rules: [
@@ -14,7 +14,13 @@ const config = {
                 exclude: /node_modules/
             }
         ]
-    }
+    },
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        dns: 'empty'
+      }
 }
 
 module.exports = config;

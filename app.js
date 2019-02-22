@@ -1,8 +1,8 @@
 // import express from 'express';
 // import db from './src/db';
 
-const express = require('express');
 const db = require('./src/db');
+const express = require('express');
 const pageSize = 5;
 
 // setup express app
@@ -10,10 +10,10 @@ const app = express();
 
 // get all members
 
-app.get('/api/v1/getMembers', function (req, res) {
+app.get('/api/v1/getMembers', (req, res)=> {
 
-    var lastIndex = parseInt(req.query.lastIndex) + 1;
-    var result = {
+    let lastIndex = parseInt(req.query.lastIndex) + 1;
+    let result = {
         success: 'true',
         message: 'members received from api endpoint',
         data: db.members.slice(lastIndex, lastIndex+pageSize)
@@ -23,6 +23,7 @@ app.get('/api/v1/getMembers', function (req, res) {
 });
 
 const PORT = 5500;
-app.listen(PORT, function () {
-    console.log(`server running on ${PORT}`)
+app.listen(PORT, ()=> {
+    console.log(`server running on ${PORT}`);
+    console.log('goto http://localhost:5500/api/v1/getMembers?lastIndex=0 to test the API')
 });
