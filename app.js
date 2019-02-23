@@ -1,7 +1,7 @@
 // import express from 'express';
 // import db from './src/db';
 
-const db = require('./src/db');
+const db = require('./functions/db');
 const express = require('express');
 const pageSize = 5;
 
