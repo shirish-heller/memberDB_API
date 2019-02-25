@@ -24,6 +24,7 @@
   "homepage": "https://github.com/shirish-heller/memberDB_API#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4"
   },
   "devDependencies": {

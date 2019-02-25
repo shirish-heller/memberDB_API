@@ -2,12 +2,13 @@ const functions = require('firebase-functions');
 const db = require('./db');
 const express = require('express');
 const pageSize = 5;
+const cors= require('cors');
 
 // setup express app
 const app = express();
 
 // get all members
-
+app.use(cors());
 app.get('/getMembers', (req, res)=> {
 
     let lastIndex = parseInt(req.query.lastIndex) + 1;
